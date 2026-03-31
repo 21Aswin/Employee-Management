@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+          <h3>Create Employee</h3>
+        </div>
+
+        <div class="card-body">
+
+          <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+
+            <!-- First Name -->
+            <div class="mb-3">
+              <label class="form-label">First Name</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="worker.firstName"
+                name="firstName"
+                required
+                placeholder="Enter first name">
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-3">
+              <label class="form-label">Last Name</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="worker.lastName"
+                name="lastName"
+                required
+                placeholder="Enter last name">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input 
+                type="email" 
+                class="form-control"
+                [(ngModel)]="worker.email"
+                name="email"
+                required
+                placeholder="Enter email address">
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-grid">
+              <button 
+                class="btn btn-success btn-lg"
+                type="submit"
+                [disabled]="employeeForm.invalid">
+                Create Employee
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
